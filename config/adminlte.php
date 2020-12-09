@@ -261,7 +261,7 @@ return [
         [
             'text' => 'Configurações do Site',
             'url'  => 'painel/settings',
-            'icon' => 'nav-icon fas fa-cog',
+            'icon' => 'nav-icon fas fa-cogs',
         ]        
     ],
 
