@@ -30,7 +30,7 @@
 
                     <div class="form-group">
                         <label class="col-form-label">Conteudo</label>
-                        <textarea name="body" class="form-control">{{old('email')}}</textarea>
+                        <textarea name="body" class="form-control bodyField">{{old('email')}}</textarea>
                     </div>
                 </div>
 
@@ -40,4 +40,18 @@
             </form>
         </div>
     </div>
+
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector:'textarea.bodyField',
+            height:300,
+            menubar:false,
+            plugins:['link', 'table', 'image', 'autoresize', 'lists'],
+            toolbar:'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | table | link image | bullist numlist',
+            content_css:[
+                '{{asset('assets/css/content.css')}}'
+            ]
+        });
+    </script>
 @endsection
