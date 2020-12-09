@@ -37,4 +37,7 @@ Route::prefix('painel')->group(function(){
     //Route Settings
     Route::get('settings', 'Admin\SettingController@index')->name('settings');
     Route::any('settingssave', 'Admin\SettingController@save')->name('settings.save');
+
+    //Pages Create
+    Route::resource('pages', 'Admin\PageController');
 });
