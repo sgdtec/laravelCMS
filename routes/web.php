@@ -13,11 +13,11 @@
 
 Route::get('/', 'Site\SiteController@index');
 
-Route::prefix('painel')->group(function(){
+Route::prefix('painel')->middleware('auth')->group(function(){
     Route::get('/', 'Admin\AdminController@index')->name('admin');
 
     //Browser Login
-    Route::get('login', 'Admin\Auth\LoginCOntroller@index')->name('login');
+    Route::get('login', 'Admin\Auth\LoginController@index')->name('login');
     Route::post('login', 'Admin\Auth\LoginController@authenticate');
 
     //Browser Register
