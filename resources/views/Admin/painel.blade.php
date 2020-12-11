@@ -7,5 +7,5 @@
 @endsection
     
 @section('content')
-    
+    ...
 @endsection

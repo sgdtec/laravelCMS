@@ -13,7 +13,7 @@
 
 Route::get('/', 'Site\SiteController@index');
 
-Route::prefix('painel')->middleware('auth')->group(function(){
+Route::prefix('painel')->group(function(){
     Route::get('/', 'Admin\AdminController@index')->name('admin');
 
     //Browser Login
