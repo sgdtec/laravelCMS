@@ -3,7 +3,15 @@
 @section('title', 'Meu perfil')
 
 @section('content_header')
-    <h1>Meu Perfil</h1>
+
+    <nav class="card">
+        <div class="card-body">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/painel">Home</a></li>
+            <li class="breadcrumb-item active">Meu Perfil</li>
+            </ol>
+        </div>
+    </nav>
 @endsection
     
 @section('content')
@@ -26,6 +34,9 @@
 @endif
 
 <div class="card">
+    <div class="card-header">
+        <h4>Perfil</h4>
+    </div>
 <div class="card-body">
     <form action="{{route('profile.save')}}" method="POST">
         @method('PUT')

@@ -3,11 +3,21 @@
 @section('title', 'Configurações')
 
 @section('content_header')
-    <h1>Configurações</h1>
+    <nav class="card">
+        <div class="card-body">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/painel">Home</a></li>
+            <li class="breadcrumb-item active">Configurações</li>
+            </ol>
+        </div>
+    </nav>    
 @endsection
     
 @section('content')
     <div class="card">
+        <div class="card-header">
+            <h4>Configurações</h4>
+        </div>
         <div class="card-body">
             @if($errors->any())
                 <div class="alert alert-danger">

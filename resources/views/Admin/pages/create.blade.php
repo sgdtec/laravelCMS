@@ -3,7 +3,15 @@
 @section('title', 'Nova Página')
 
 @section('content_header')
-    <h1>Nova Página</h1>
+    <nav class="card">
+        <div class="card-body">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{route('pages.index')}}">Minhas Páginas</a></li>
+            <li class="breadcrumb-item active">Nova Página</li>
+            </ol>
+        </div>
+    </nav>
 @endsection
 
 @section('content')
@@ -19,6 +27,9 @@
     @endif
 
     <div class="card">
+        <div class="card-header">
+            <h4>Nova Página</h4>
+        </div>
         <div class="card-body">
             <form action="{{route('pages.store')}}" method="post">
                 @csrf
@@ -45,13 +56,16 @@
     <script>
         tinymce.init({
             selector:'textarea.bodyField',
-            height:300,
+            height:400,
             menubar:false,
             plugins:['link', 'table', 'image', 'autoresize', 'lists'],
             toolbar:'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | table | link image | bullist numlist',
             content_css:[
                 '{{asset('assets/css/content.css')}}'
-            ]
+            ],
+            images_upload_url:'{{route('imageUpload')}}',
+            images_upload_credentials:true,
+            convert_urls:false
         });
     </script>
 @endsection

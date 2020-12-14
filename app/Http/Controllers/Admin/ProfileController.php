@@ -11,10 +11,6 @@ use Illuminate\Support\Facades\Validator;
 
 class ProfileController extends Controller
 {
-    public function __construct() {
-        $this->middleware('auth');
-    }
-
     public function index(){
 
         $loggedId = intval(Auth::id());

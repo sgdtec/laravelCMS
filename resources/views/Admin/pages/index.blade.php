@@ -3,14 +3,26 @@
 @section('title', 'Páginas')
 
 @section('content_header')
-    <h1>
-        Minhas Páginas
-        <a href="{{route('pages.create')}}" class="btn btn-sm btn-success">Nova Página</a>
-    </h1>
+    <nav class="card">
+        <div class="card-body">
+            <h1 class="icon-home pb-0">
+                Páginas
+            </h1>
+        </div>
+        <div class="card-body">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/painel">Home</a></li>
+            <li class="breadcrumb-item active">Minhas Páginas</li>
+            </ol>
+        </div>
+    </nav>
 @endsection
 
-@section('content')
+@section('content')    
     <div class="card">
+        <div class="card-header">
+            <a href="{{route('pages.create')}}" class="btn btn-sm btn-success float-right">Nova Página</a>
+        </div>
         <div class="card-body"> 
             <table class="table table-hover">
                 <thead>
